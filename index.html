@@ -27,16 +27,17 @@
             height: 10em;
             /* background-color: yellow; */
             border-radius: 50%;
-            box-shadow: 0 0 3em white;
-            background-image: url("./assets/images/RR.jpg");
+            box-shadow: 0 0 1em rgb(255, 210, 49);
+            background-color: #ff9900;
             background-size: cover;
         }
         .earth, .moon{
             position: absolute;
             border-style: solid;
-            border-color: white transparent transparent transparent;
+            border-color: rgb(143, 128, 102) transparent transparent transparent;
             border-width: 0.1em 0.1em 0 0 ;
             border-radius: 50%;
+            box-shadow: 0px 0px 1px #fac77a38;
         }
         @keyframes orbit{
             to{
@@ -49,13 +50,13 @@
             left: 5em;
             width: 30em;
             height: 30em;
-            animation: orbit 20s linear infinite;
+            /* animation: orbit 20s linear infinite; */
         }
         .moon{
-            top: 5px;
-            left: 400px;
-            width: 10em;
-            height: 10em;
+            top: 30px;
+            left: 460px;
+            width: 7em;
+            height: 7em;
             animation: orbit 5s  linear infinite;
             /* background-color: rgba(202, 255, 255, 0.178); */
         }
@@ -68,20 +69,21 @@
         .earth::before{
             top: 2.8em;
             right: 2rem;
-            width: 5em;
-            height: 5em;
+            width: 4em;
+            height: 4em;
             /* background-color: aqua; */
-            background-image: url(./assets/images/Raju.jpg);
+            background-color: blue;
             background-size: cover;
+            box-shadow: 0px 0px 50px rgba(0, 0, 255, 0.409);
 
         }
         .moon::before{
             top: 0.8em;
-            right: 0.2em;
-            width: 2em;
-            height: 2em;
+            right: 0.1em;
+            width: 1.5em;
+            height: 1.5em;
             /* background-color: silver; */
-            background-image: url(./assets/images/reethu.jpg);
+            background-color: aliceblue;
             background-size: cover;
 
         }
