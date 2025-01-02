@@ -5,12 +5,14 @@
     <title>Document</title>
     <style>
         body{
-            margin: 0px;
-            height: 120vh;
+            margin: 10px;
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: black;
+            /* background-color: black; */
+            background: radial-gradient(#3D3D3D, #FFD65A, #29004d, #000000);
+            background-size: cover;
             overflow: hidden;
         }
         .container{
@@ -18,6 +20,7 @@
             width: 40em;
             height: 40em;
             position: relative;
+            z-index: 100;
         }
         .sun{
             position: absolute;
@@ -27,14 +30,16 @@
             height: 10em;
             /* background-color: yellow; */
             border-radius: 50%;
-            box-shadow: 0 0 1em rgb(255, 210, 49);
-            background-color: #ff9900;
+            /* box-shadow: 0 0 1em rgb(255, 210, 49); */
+            /* background: linear-gradient(20deg ,yellow red blue); */
+            background: url(https://pngimg.com/uploads/sun/sun_PNG13424.png);
             background-size: cover;
+            animation: orbit 50s linear infinite;
         }
         .earth, .moon{
             position: absolute;
             border-style: solid;
-            border-color: rgb(143, 128, 102) transparent transparent transparent;
+            border-color: rgb(255, 255, 255) transparent transparent transparent;
             border-width: 0.1em 0.1em 0 0 ;
             border-radius: 50%;
             box-shadow: 0px 0px 1px #fac77a38;
@@ -46,18 +51,18 @@
             }
         }
         .earth{
-            top: 5em;
-            left: 5em;
-            width: 30em;
-            height: 30em;
+            top: 200px;
+            left: 200px;
+            width: 20em;
+            height: 20em;
             animation: orbit 20s linear infinite;
         }
         .moon{
-            top: 30px;
-            left: 460px;
+            top: 7px;
+            left: 290px;
             width: 7em;
             height: 7em;
-            animation: orbit 5s  linear infinite;
+            animation: orbit 5s  linear infinite ;
             /* background-color: rgba(202, 255, 255, 0.178); */
         }
         .earth::before,
@@ -67,14 +72,15 @@
             border-radius: 50%; 
         }
         .earth::before{
-            top: 2.8em;
-            right: 2rem;
+            top: 2em;
+            right: 0rem;
             width: 4em;
             height: 4em;
             /* background-color: aqua; */
-            background-color: blue;
+            /* background-color: blue; */
+            background: url(https://purepng.com/public/uploads/large/purepng.com-earthearthplanetglobethird-planet-from-the-sun-1411526987924uaycc.png) no-repeat;
             background-size: cover;
-            box-shadow: 0px 0px 50px rgba(0, 0, 255, 0.409);
+            /* box-shadow: 0px 0px 50px rgba(0, 0, 255, 0.409); */
 
         }
         .moon::before{
@@ -83,7 +89,8 @@
             width: 1.5em;
             height: 1.5em;
             /* background-color: silver; */
-            background-color: aliceblue;
+            /* background-color: aliceblue; */
+            background: url(https://purepng.com/public/uploads/large/purepng.com-moonmoonskyrealisticnightblack-and-white-591521584248xjtz1.png)no-repeat;
             background-size: cover;
 
         }
@@ -163,7 +170,40 @@
                 height: 3em;
             }
         }
-    /* </style> */
+        .starss{
+            position: absolute;
+            color: aliceblue;
+            
+        }
+        .star{
+            /* position: absolute; */
+            width: 5px;
+            height: 5px;
+            background-color: #fff;
+            border-radius: 100px;
+            /* box-shadow: 0px 0px 100px #ff9f0f; */
+            animation: blink 1s linear infinite alternate;
+            animation-delay: var(--time);
+        }
+        @keyframes blink{
+            from{
+                opacity: 0;
+            }to{
+                opacity: 1;
+            }
+        }
+      #star{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        /* background-color: red; */
+        top: 0;
+        left: 0;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+      }
+      
+  
 
     </style>
 </head>
@@ -174,5 +214,24 @@
             <div class="moon"></div>
          </div>
     </div>
+    <div id="star">
+
+    </div>
+
+    <script>
+
+        let star = document.getElementById('star')
+
+        // star.innerHTML += `<p>.</p>`
+
+            for(let i=0; i<=100; i++){
+                console.log(star);
+                let rNumber = Math.round(Math.random()*100);
+                let time = Math.round(Math.random()*5);
+               star.innerHTML += `<div class="star" style='transform:translate(${rNumber}px); --time:${time}s'></div>`
+                
+            }
+
+    </script>
 </body>
 </html>
